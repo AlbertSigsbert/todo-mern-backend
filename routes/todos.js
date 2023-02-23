@@ -5,7 +5,8 @@ const {
   getTodo,
   createTodo,
   updateTodo,
-  deleteTodo
+  deleteTodo,
+  sendInvite
 } = require("../controllers/todoController");
 
 const requireAuth = require('../middleware/requireAuth');
@@ -27,5 +28,8 @@ router.delete("/:id", deleteTodo);
 
 //UPDATE a single todo
 router.patch("/:id", updateTodo);
+
+//SEND emails
+router.get("/send-invite/:id", sendInvite);
 
 module.exports = router;
